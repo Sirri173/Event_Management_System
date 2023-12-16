@@ -13,7 +13,6 @@ mongoose.connect('mongodb://localhost/eventManagement', {
   useUnifiedTopology: true,
 });
 
-// Create a MongoDB schema and model (you may customize this)
 const EventSchema = new mongoose.Schema({
   name: String,
   description: String,
@@ -25,7 +24,7 @@ const Event = mongoose.model('Event', EventSchema);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Serve static files (you might not need this if you're not serving HTML files)
+
 app.use(express.static('public'));
 
 // Routes
@@ -49,8 +48,6 @@ app.post('/addNewItem', (req, res) => {
   });
 });
 
-
-// Implement similar routes for other forms (Product Status, Request Item, View Product)
 
 // Add New Item
 app.post('/addNewItem', (req, res) => {
@@ -94,9 +91,6 @@ app.get('/productStatus/:eventId', (req, res) => {
 app.post('/requestItem', (req, res) => {
   const { itemName, userId } = req.body;
 
-  // Add logic for handling Request Item form submission
-  // You may update the user's cart, create an order, etc.
-
   res.status(200).send('Item requested successfully');
 });
 
@@ -114,8 +108,7 @@ app.get('/viewProduct/:productId', (req, res) => {
 app.post('/requestItem', (req, res) => {
   const { itemName, userId } = req.body;
 
-  // Fetch the user from the database based on userId
-  // This assumes you have a User model in your MongoDB schema
+  
   User.findById(userId, (err, user) => {
     if (err) {
       console.error(err);
@@ -126,7 +119,7 @@ app.post('/requestItem', (req, res) => {
       return res.status(404).send('User not found');
     }
 
-    // Assume the user has a cart property in the database
+    
     // Update the user's cart with the requested item
     user.cart.push({ itemName });
 
@@ -160,8 +153,6 @@ app.post('/requestItem', (req, res) => {
     });
   });
 });
-
-
 
 
 // Start the server
