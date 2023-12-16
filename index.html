@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Event Management System</h1>
+    <nav>
+        <ul>
+            <li><a href="#" id="insertItem">Insert</a></li>
+            <li><a href="#" id="deleteItem">Delete</a></li>
+            <li><a href="#" id="addMembership">Add Membership</a></li>
+            <li><a href="#" id="updateMembership">Update Membership</a></li>
+            <li><a href="#" id="usersManagement">Users Management</a></li>
+            <li><a href="#" id="vendorManagement">Vendor Management</a></li>
+            <li><a href="#" id="vendorLEU">Vendor LEU</a></li>
+            <li><a href="#" id="userCart">User Cart</a></li>
+            <li><a href="#" id="guestList">Guest List</a></li>
+            <li><a href="#" id="orderStatus">Order Status</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Add New Item Form -->
+        <section id="addNewItemForm" class="form-section">
+            <h2>Add New Item</h2>
+            <form id="addNewItemForm">
+                <label for="itemName">Item Name:</label>
+                <input type="text" id="itemName" name="itemName" required>
+
+                <label for="itemImage">Item Image:</label>
+                <textarea id="itemImage" name="itemImage" rows="4"></textarea>
+
+                <label for="itemPrice">Item Price:</label>
+                <input type="number" id="itemPrice" name="itemPrice" step="0.01" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Product Status Form -->
+        <section id="productStatusForm" class="form-section">
+            <h2>Product Status</h2>
+            <form id="productStatusForm">
+                <label for="productId">Product ID:</label>
+                <input type="text" id="productId" name="productId" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Request Item Form -->
+        <section id="requestItemForm" class="form-section">
+            <h2>Request Item</h2>
+            <form id="requestItemForm">
+                <label for="itemName">Item Name:</label>
+                <input type="text" id="itemName" name="itemName" required>
+
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" name="userId" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- View Product Form -->
+        <section id="viewProductForm" class="form-section">
+            <h2>View Product</h2>
+            <form id="viewProductForm">
+                <label for="productId">Product ID:</label>
+                <input type="text" id="productId" name="productId" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
